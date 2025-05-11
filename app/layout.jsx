@@ -1,3 +1,4 @@
+import { ClientLayout } from './ClientLayout';
 import { headers } from 'next/headers';
 
 export const metadata = {

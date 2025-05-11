@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navigation } from "./Navigation";
 import { ThemeProvider } from 'next-themes';
 import "./globals.css";

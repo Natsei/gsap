@@ -14,6 +14,8 @@ export const metadata = {
   }
 };
 
+// Move ThemeProvider to a client component
+'use client';
 function ClientLayout({ children }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
@@ -23,7 +25,7 @@ function ClientLayout({ children }) {
   );
 }
 
-// This is the root layout that remains a server component
+// Keep RootLayout as a server component
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>

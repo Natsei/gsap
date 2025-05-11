@@ -1,9 +1,4 @@
-'use client';
-
-import React from 'react';
-import { Navigation } from "./Navigation";
-import { ThemeProvider } from 'next-themes';
-import "./globals.css";
+import { headers } from 'next/headers';
 
 export const metadata = {
   title: "Lumos | Donnez vie à votre présence en ligne",
@@ -15,15 +10,6 @@ export const metadata = {
     images: ["/images/og-image.webp"],
   }
 };
-
-function ClientLayout({ children }) {
-  return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
-      <Navigation />
-      {children}
-    </ThemeProvider>
-  );
-}
 
 export default function RootLayout({ children }) {
   return (

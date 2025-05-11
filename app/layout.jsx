@@ -1,3 +1,4 @@
+import React from 'react';
 import "./globals.css";
 import { Navigation } from "./Navigation";
 import { ThemeProvider } from 'next-themes';
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
           <Navigation />
           {children}
         </ThemeProvider>

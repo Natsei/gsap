@@ -1,9 +1,6 @@
-'use client';
-
-import React from 'react';
-import "./globals.css";
 import { Navigation } from "./Navigation";
 import { ThemeProvider } from 'next-themes';
+import "./globals.css";
 
 export const metadata = {
   title: "Lumos | Donnez vie à votre présence en ligne",
@@ -16,14 +13,21 @@ export const metadata = {
   }
 };
 
+function ClientLayout({ children }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
+      <Navigation />
+      {children}
+    </ThemeProvider>
+  );
+}
+
+// This is the root layout that remains a server component
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
-          <Navigation />
-          {children}
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

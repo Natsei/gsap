@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Navigation } from "./Navigation";
 import { ThemeProvider } from 'next-themes';
@@ -14,8 +16,6 @@ export const metadata = {
   }
 };
 
-// Move ThemeProvider to a client component
-'use client';
 function ClientLayout({ children }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
@@ -25,7 +25,6 @@ function ClientLayout({ children }) {
   );
 }
 
-// Keep RootLayout as a server component
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
